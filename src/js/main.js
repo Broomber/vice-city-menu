@@ -57,26 +57,49 @@
     return clipPathString;
   }
 
-  var menuEl = document.getElementsByClassName('menu'),
-      menu = menuEl[0],
-      menuList = menu.getElementsByClassName('menu__list'),
-      menuItems = menu.getElementsByClassName('menu__item'),
-      menuLinks = menu.getElementsByClassName('menu__link'),
-      menuWalker = menu.getElementsByClassName('menu__walker'),
-      menuWalkerPath = menu.getElementsByClassName('menu__walker-path');
+  // DOM Content Loaded
+  document.addEventListener("DOMContentLoaded", function(event) {
 
-  if ( menuEl.length > 0 ) {
-    for (var i = 0; i < menuItems.length; i++) {
-      menuItems[i].addEventListener('mouseenter', function() {
-        var clipPath = getClipPathString(5, 20);
+    // Define required variables
+    var menuEl = document.getElementsByClassName('menu'),
+        menuBg = document.getElementsByClassName('menu-bg'),
+        menuBgPath = document.getElementsByClassName('menu-bg-path'),
+        menu = menuEl[0],
+        menuList = menu.getElementsByClassName('menu__list'),
+        menuItems = menu.getElementsByClassName('menu__item'),
+        menuLinks = menu.getElementsByClassName('menu__link'),
+        menuWalker = menu.getElementsByClassName('menu__walker'),
+        menuWalkerPath = menu.getElementsByClassName('menu__walker-path');
+    // --
 
-        menuWalker[0].style.top = this.offsetTop + 'px';
-        // menuWalker[0].style.width = this.offsetWidth + 'px';
-        menuWalker[0].setAttribute('width', this.offsetWidth + 'px');
-
-        menuWalkerPath[0].setAttribute('points', clipPath);
-      });
+    // Clip-path background item
+    if ( menuBg.length > 0 ) {
+      var clipPath = getClipPathString(7, 7);
+      menuBgPath[0].setAttribute('points', clipPath);
     }
-  }
+    // --
+
+    // Set walker size & position
+    menuWalker[0].style.top = menuItems[0].offsetTop + 'px';
+    menuWalker[0].setAttribute('width', menuItems[0].offsetWidth + 'px');
+    menuWalker[0].setAttribute('height', menuItems[0].offsetHeight + 'px');
+    // --
+
+    // Set walker size & position on hover menu items
+    if ( menuEl.length > 0 ) {
+      for (var i = 0; i < menuItems.length; i++) {
+        menuItems[i].addEventListener('mouseenter', function() {
+          var clipPath = getClipPathString(5, 20);
+
+          menuWalker[0].style.top = this.offsetTop + 'px';
+          menuWalker[0].setAttribute('width', this.offsetWidth + 'px');
+          menuWalker[0].setAttribute('height', Math.floor(this.offsetHeight * 1.1) + 'px');
+          menuWalkerPath[0].setAttribute('points', clipPath);
+        });
+      }
+    }
+    // --
+
+  });
 
 })();

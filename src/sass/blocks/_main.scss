@@ -1,5 +1,3 @@
-$transition_normal: .4s;
-
 * {
   cursor: url(/img/vc-cursor.png), auto;
 }
@@ -9,12 +7,28 @@ html, body {
   overflow: hidden;
   background: #CCC;
 }
+.menu-bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 84%;
+  height: 84%;
+  margin: auto;
+  // background-image: url('/img/bg/background.png');
+
+  &-path {
+    // fill: url('/img/bg/background.png');
+  }
+}
 
 .menu {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-family: $font-primary;
 
   &__list {
     display: block;
@@ -30,30 +44,33 @@ html, body {
     margin-left: auto;
     margin-right: auto;
   }
+
+
+
+  &__link {
+    display: inline-block;
+    padding: .1em .2em;
+    text-decoration: none;
+    color: $brand-primary;
+    transform: translateZ(0px);
+    text-transform: lowercase;
+    font-size: 3em;
+    text-shadow: .075em .075em 0 black;
+  }
   
   &__walker {
     position: absolute;
     top: 0;
     left: 50%;
     // width: 100%;
-    height: 40px;
+    // height: 40px;
     z-index: -1;
     transform: translateX(-50%) scale(1.2, 1.2);
-    transition: all $transition_normal;
-    // clip-path: polygon(2% 22%, 100% 16%, 97% 82%, 4% 80%);
-  }
+    transition: all $normal-speed;
 
-  &__walker-path {
-    fill: #198246;
-    transition: all $transition_normal;
-  }
-
-  a {
-    display: inline-block;
-    padding: 10px 20px;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: #ff96ff;
-    transform: translateZ(0px);
+    &-path {
+      fill: $walker-bg;
+      transition: all $normal-speed;
+    }
   }
 }

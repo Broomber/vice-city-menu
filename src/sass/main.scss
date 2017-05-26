@@ -2,21 +2,15 @@
 // Styles import
 //========================================
 
-// Grid
-// @import "_grid.scss";
-
-// normalize.scss
-// @import "../../node_modules/normalize-scss/sass/normalize/_import-now.scss";
-
 // Custom variables and mixins
+//----------------------------------------
 @import "_variables.scss";
 @import "_mixins.scss";
+@import "_font-face.scss";
 
 // Custom blocks styles
 //----------------------------------------
-// @import "blocks/_html.scss";
 // @import "blocks/_header.scss";
 // @import "blocks/_footer.scss";
 @import "blocks/_main.scss";
-// @import "blocks/_nav-main.scss";
 
