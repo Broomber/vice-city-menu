@@ -1,0 +1,55 @@
+$transition_normal: .4s;
+
+* {
+  cursor: url(/img/vc-cursor.png), auto;
+}
+
+html, body {
+  width: 100%; height: 100%;
+  overflow: hidden;
+  background: #CCC;
+}
+
+.menu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &__list {
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  &__item {
+    display: table;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  a {
+    display: inline-block;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #ff96ff;
+    transform: translateZ(0px);
+  }
+  
+  &__walker {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 40px;
+    z-index: -1;
+    transform: translateX(-50%) scale(1.2, 1.2);
+    background-color: #198246;
+    transition: all $transition_normal;
+    clip-path: polygon(2% 22%, 100% 16%, 97% 82%, 4% 80%);
+  }
+}
