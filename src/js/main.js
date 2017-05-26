@@ -46,14 +46,13 @@
   // END Toggle Navigation
 
   function getClipPathString(offsetX, offsetY) {
-    var clipPathCoord11 = getRandomInt(0, (offsetX + 1))+ '% ' + getRandomInt(0, (offsetY + 1)) + '%',
-        clipPathCoord12 = getRandomInt((101 - offsetX), 101)+ '% ' + getRandomInt(0, (offsetY + 1)) + '%',
-        clipPathCoord21 = getRandomInt((101 - offsetX), 101)+ '% ' + getRandomInt((101 - offsetY), 101) + '%',
-        clipPathCoord22 = getRandomInt(0, (offsetX + 1))+ '% ' + getRandomInt((101 - offsetY), 101) + '%',
+    var clipPathCoord11 = getRandomInt(0, (offsetX + 1))+ ' ' + getRandomInt(0, (offsetY + 1)),
+        clipPathCoord12 = getRandomInt((101 - offsetX), 101)+ ' ' + getRandomInt(0, (offsetY + 1)),
+        clipPathCoord21 = getRandomInt((101 - offsetX), 101)+ ' ' + getRandomInt((101 - offsetY), 101),
+        clipPathCoord22 = getRandomInt(0, (offsetX + 1))+ ' ' + getRandomInt((101 - offsetY), 101),
         clipPathString;
 
     clipPathString = clipPathCoord11 + ', ' + clipPathCoord12 + ', ' + clipPathCoord21 + ', ' + clipPathCoord22;
-    clipPathString = 'polygon(' + clipPathString + ')';
 
     return clipPathString;
   }
@@ -63,7 +62,8 @@
       menuList = menu.getElementsByClassName('menu__list'),
       menuItems = menu.getElementsByClassName('menu__item'),
       menuLinks = menu.getElementsByClassName('menu__link'),
-      menuWalker = menu.getElementsByClassName('menu__walker');
+      menuWalker = menu.getElementsByClassName('menu__walker'),
+      menuWalkerPath = menu.getElementsByClassName('menu__walker-path');
 
   if ( menuEl.length > 0 ) {
     for (var i = 0; i < menuItems.length; i++) {
@@ -71,9 +71,10 @@
         var clipPath = getClipPathString(5, 20);
 
         menuWalker[0].style.top = this.offsetTop + 'px';
-        menuWalker[0].style.width = this.offsetWidth + 'px';
+        // menuWalker[0].style.width = this.offsetWidth + 'px';
+        menuWalker[0].setAttribute('width', this.offsetWidth + 'px');
 
-        menuWalker[0].style.clipPath = clipPath;
+        menuWalkerPath[0].setAttribute('points', clipPath);
       });
     }
   }

@@ -31,15 +31,6 @@ html, body {
     margin-right: auto;
   }
   
-  a {
-    display: inline-block;
-    padding: 10px 20px;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: #ff96ff;
-    transform: translateZ(0px);
-  }
-  
   &__walker {
     position: absolute;
     top: 0;
@@ -48,8 +39,20 @@ html, body {
     height: 40px;
     z-index: -1;
     transform: translateX(-50%) scale(1.2, 1.2);
-    background-color: #198246;
     transition: all $transition_normal;
     clip-path: polygon(2% 22%, 100% 16%, 97% 82%, 4% 80%);
+  }
+
+  &__walker-path {
+    fill: #198246;
+  }
+
+  a {
+    display: inline-block;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #ff96ff;
+    transform: translateZ(0px);
   }
 }
