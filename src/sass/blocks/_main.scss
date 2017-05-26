@@ -40,11 +40,12 @@ html, body {
     z-index: -1;
     transform: translateX(-50%) scale(1.2, 1.2);
     transition: all $transition_normal;
-    clip-path: polygon(2% 22%, 100% 16%, 97% 82%, 4% 80%);
+    // clip-path: polygon(2% 22%, 100% 16%, 97% 82%, 4% 80%);
   }
 
   &__walker-path {
     fill: #198246;
+    transition: all $transition_normal;
   }
 
   a {
