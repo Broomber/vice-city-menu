@@ -1,6 +1,6 @@
 {
-  "name": "wwwice-city",
-  "version": "1.0.0",
+  "name": "Vice City Main Menu",
+  "version": "0.1.0",
   "description": "Imitation of Grand Theft Auto - Vice City main menu",
   "main": "index.html",
   "scripts": {
@@ -12,7 +12,8 @@
   },
   "author": "Broomber",
   "license": "ISC",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "browser-sync": "^2.18.12",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
@@ -29,13 +30,13 @@
     "gulp-uglify": "^3.0.0",
     "handlebars-helpers": "^0.8.2"
   },
-  "devDependencies": {},
   "keywords": [
     "html",
     "css",
     "js",
-    "grand theft auto",
+    "svg",
+    "clip-path",
     "vice city",
-    "clip-path"
+    "gta"
   ]
 }

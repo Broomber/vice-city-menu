@@ -5,12 +5,10 @@
 // Custom variables and mixins
 //----------------------------------------
 @import "_variables.scss";
-@import "_mixins.scss";
 @import "_font-face.scss";
+@import "_mixins.scss";
 
 // Custom blocks styles
 //----------------------------------------
-// @import "blocks/_header.scss";
-// @import "blocks/_footer.scss";
 @import "blocks/_main.scss";
 

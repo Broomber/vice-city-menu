@@ -4,7 +4,6 @@ var gulp        = require('gulp'),
   plumber       = require('gulp-plumber'),
   concat        = require('gulp-concat'),
   rename        = require('gulp-rename'),
-  // less         =  require('gulp-less'),
   sass          = require('gulp-sass'),
   autoprefixer  = require('gulp-autoprefixer'),
   cssMinify     = require('gulp-clean-css'),
@@ -18,33 +17,22 @@ var gulp        = require('gulp'),
   reload        = browserSync.reload;
 
 var paths = {
-  deploy:     'deploy',
+  deploy:     '.',
   build:      'build',
   source:     'src',
-  hbs:       'src/hbs/',
+  hbs:        'src/hbs/',
   style:      'src/sass/main.scss',
-  // style:      'src/less/main.less',
   js:         'src/js/*.js',
   images:     'src/img/**/*',
   fonts:      'src/fonts/**/*'
 };
 
 var watch = {
-  hbs:       'src/hbs/**/*',
+  hbs:        'src/hbs/**/*',
   style:      'src/sass/**/*',
-  // style:      'src/less/**/*',
   js:         'src/js/**/*',
   images:     'src/img/**/*'
 };
-
-var cssLibs = [
-  // 'node_modules/select2/dist/css/select2.min.css',
-];
-
-var jsLibs = [
-  // 'node_modules/jquery/dist/jquery.min.js',
-  // 'node_modules/bootstrap/dist/js/bootstrap.min.js'
-];
 
 var jsMain = [
   paths.source + '/js/main.js'
@@ -80,13 +68,12 @@ gulp.task('build-css', function() {
     .src(paths.style)
     .pipe(plumber())
     .pipe(sourcemaps.init())
-    // .pipe(less())
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer())
     // .pipe(cssMinify())
     .pipe(rename('main.min.css'))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest(paths.build + '/css'));
+    .pipe(gulp.dest(paths.build + '/assets/css'));
 });
 
 
@@ -94,7 +81,7 @@ gulp.task('build-css', function() {
 // -----------------------------------------------
 
 // Build JS
-gulp.task('build-js', ['build-vendor-js'], function() {
+gulp.task('build-js', function() {
   return gulp
     .src(paths.js)
     .pipe(plumber())
@@ -103,15 +90,7 @@ gulp.task('build-js', ['build-vendor-js'], function() {
     .pipe(packer())
     .pipe(rename({suffix: '.min'}))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest(paths.build + '/js'));
-});
-
-// Build Vendor JS
-gulp.task('build-vendor-js', function() {
-  return gulp
-    .src(jsLibs)
-    .pipe(plumber())
-    .pipe(gulp.dest(paths.source + '/js'));
+    .pipe(gulp.dest(paths.build + '/assets/js'));
 });
 
 
@@ -124,7 +103,7 @@ gulp.task('build-img', ['build-ico'], function() {
     .src(paths.images + '.{jpg,png,svg,gif}')
     .pipe(plumber())
     .pipe(imagemin())
-    .pipe(gulp.dest(paths.build + '/img'));
+    .pipe(gulp.dest(paths.build + '/assets/img'));
 });
 
 // Copy Icons
@@ -133,7 +112,7 @@ gulp.task('build-ico', function() {
   return gulp
     .src(paths.images + '.ico')
     .pipe(plumber())
-    .pipe(gulp.dest(paths.build + '/img'));
+    .pipe(gulp.dest(paths.build + '/assets/img'));
 });
 
 
@@ -143,7 +122,7 @@ gulp.task('build-fonts', function() {
   return gulp
     .src(paths.fonts)
     .pipe(plumber())
-    .pipe(gulp.dest(paths.build + '/fonts'));
+    .pipe(gulp.dest(paths.build + '/assets/fonts'));
 });
 
 
@@ -182,12 +161,11 @@ gulp.task('deploy-css', function() {
   return gulp
     .src(paths.style)
     .pipe(plumber())
-    // .pipe(less())
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer())
     .pipe(cssMinify())
     .pipe(rename('main.min.css'))
-    .pipe(gulp.dest(paths.deploy + '/css'));
+    .pipe(gulp.dest(paths.deploy + '/assets/css'));
 });
 
 
@@ -195,22 +173,14 @@ gulp.task('deploy-css', function() {
 // -----------------------------------------------
 
 // Deploy JS
-gulp.task('deploy-js', ['deploy-vendor-js'], function() {
+gulp.task('deploy-js', function() {
   return gulp
     .src(paths.js)
     .pipe(plumber())
     .pipe(concat('script.js'))
     .pipe(packer())
     .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest(paths.deploy + '/js'));
-});
-
-// Deploy Vendor JS
-gulp.task('deploy-vendor-js', function() {
-  return gulp
-    .src(jsLibs)
-    .pipe(plumber())
-    .pipe(gulp.dest(paths.deploy + '/js'));
+    .pipe(gulp.dest(paths.deploy + '/assets/js'));
 });
 
 
@@ -223,7 +193,7 @@ gulp.task('deploy-img', ['deploy-ico'], function() {
     .src(paths.images + '.{jpg,png,svg,gif}')
     .pipe(plumber())
     .pipe(imagemin())
-    .pipe(gulp.dest(paths.deploy + '/img'));
+    .pipe(gulp.dest(paths.deploy + '/assets/img'));
 });
 
 // Copy Icons
@@ -232,7 +202,7 @@ gulp.task('deploy-ico', function() {
   return gulp
     .src(paths.images + '.ico')
     .pipe(plumber())
-    .pipe(gulp.dest(paths.deploy + '/img'));
+    .pipe(gulp.dest(paths.deploy + '/assets/img'));
 });
 
 
@@ -242,7 +212,7 @@ gulp.task('deploy-fonts', function() {
   return gulp
     .src(paths.fonts)
     .pipe(plumber())
-    .pipe(gulp.dest(paths.deploy + '/fonts'));
+    .pipe(gulp.dest(paths.deploy + '/assets/fonts'));
 });
 
 

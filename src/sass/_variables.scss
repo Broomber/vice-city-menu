@@ -8,66 +8,31 @@
 $font-primary: 'Pricedown Rus', Geneva, Arial, Helvetica, sans-serif;
 
 
-
-
 // Colors
 //----------------------------------------
 
 // Brand Colors
-$brand-primary:         #ff7f3f;
-$brand-success:         #5cb85c;
-$brand-info:            #5bc0de;
-$brand-warning:         #f0ad4e;
-$brand-danger:          #d9534f;
-
-// Font Colors
-$f-base:                #616161;                  // 
-$f-light:               lighten($f-base, 40%);    // #c7c7c7
-$f-lighter:             lighten($f-base, 30%);    // #aeaeae
-$f-darker:              darken($f-base, 10%);     // #484848
-$f-dark:                darken($f-base, 15%);     // #3b3b3b
-
-// Background Colors
-$bg-base:               #333;                     // 
-$bg-light:              lighten($bg-base, 80%);   // #ffffff
-$bg-lighter:            lighten($bg-base, 75%);   // #f2f2f2
-$bg-darker:             darken($bg-base, 5%);     // #262626
-$bg-dark:               darken($bg-base, 10%);    // #1a1a1a
-
-
+$brand-primary:         #ff96ff;
+$walker-bg:             #198246;
 
 // Media queries breakpoints (Bootstrap 4)
 //----------------------------------------
 
 // Extra small devices (portrait phones, less than 576px)
 $screen-xs:                  480px;
-$screen-xs-min:              $screen-xs;
-$screen-phone:               $screen-xs-min;
-
 // Small devices (landscape phones, 576px and up)
 $screen-sm:                  576px;
-$screen-sm-min:              $screen-sm;
-$screen-tablet:              $screen-sm-min;
-
 // Medium devices (tablets, 768px and up)
 $screen-md:                  768px;
-$screen-md-min:              $screen-md;
-$screen-desktop:             $screen-md-min;
-
 // Large devices (desktops, 992px and up)
 $screen-lg:                  992px;
-$screen-lg-min:              $screen-lg;
-$screen-lg-desktop:          $screen-lg-min;
-
 // Extra large devices (large desktops, 1200px and up)
 $screen-xl:                  1200px;
-$screen-xl-min:              $screen-lg;
-$screen-xl-desktop:          $screen-lg-min;
 
 // So media queries don't overlap when required, provide a maximum
-$screen-xs-max:              ($screen-sm-min - 1);
-$screen-sm-max:              ($screen-md-min - 1);
-$screen-md-max:              ($screen-lg-min - 1);
+$screen-xs-max:              ($screen-sm - 1);
+$screen-sm-max:              ($screen-md - 1);
+$screen-md-max:              ($screen-lg - 1);
 
 
 
@@ -76,19 +41,10 @@ $screen-md-max:              ($screen-lg-min - 1);
 
 // Fast transition
 $fast-speed: 400ms;
-
 // Default speed transition
 $normal-speed: 400ms;
-
 // Default speed transition
 $slow-speed: 600ms;
-
-
-
-// Header
-//----------------------------------------
-
-$header-height: 64px;
 
 
 // @media (min-width: $screen-xs-min) {}

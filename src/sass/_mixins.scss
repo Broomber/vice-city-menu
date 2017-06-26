@@ -2,53 +2,12 @@
 // Mixins
 //========================================
 
-.clearfix {
-  &:before,
-  &:after {
-    content: " ";
-    display: table;
-  }
-  &:after {
-    clear: both;
-  }
-}
 
-.container {
-  @extend .clearfix;
-  max-width: 70em;
-  margin-right: auto;
-  margin-left: auto;
-}
+// Primary text styles
+//----------------------------------------
 
-.link-underline {
-  position: relative;
-  padding-left: gutter();
-  padding-right: gutter();
-  color: $f-lighter;
-  transition: color $normal-speed; 
-
-  &:after {
-    content: "";
-    display: block;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 1px;
-    width: 100%;
-    transform: scaleX(0);
-    background-color: transparent;
-    transition: transform $normal-speed; 
-  }
-
-  &:hover,
-  &:focus,
-  &:active {
-    text-decoration: none;
-    color: $brand-primary;
-
-    &:after {
-      transform: scaleX(1);
-      background-color: $brand-primary;
-    }
-  }
+@mixin menu-text() {
+  font-family: $font-primary;
+  color: $brand-primary;
+  text-transform: lowercase;
 }
