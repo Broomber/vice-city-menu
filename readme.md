@@ -10,6 +10,8 @@ Inspired by [Tadas Karpavičius](//codepen.io/trajektorijus/pen/ipzfa).
   - Transform (translate, scale);
   - Cursor.
 
+# Demo
+https://broomber.github.io/vice-city-menu/
 
 # Installation
 
