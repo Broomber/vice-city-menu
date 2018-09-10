@@ -1,7 +1,7 @@
 {
   "name": "Vice City Main Menu",
   "version": "0.1.0",
-  "description": "Imitation of Grand Theft Auto - Vice City main menu",
+  "description": "Imitation of the Grand Theft Auto - Vice City main menu",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
