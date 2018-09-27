@@ -12,31 +12,27 @@ Inspired by [Tadas Karpavičius](//codepen.io/trajektorijus/pen/ipzfa).
 
 # Demo
 https://broomber.github.io/vice-city-menu/
+[!] There is some troubles with displaying frame width of active item in GitHub Pages.
 
 # Installation
 
 Project requires [Node Package manager](//www.npmjs.com) to run.
+
 Install the dependencies and devDependencies, build project and start local server.
 
 ```sh
+$ git clone https://github.com/Broomber/vice-city-menu.git
 $ cd vice-city-menu
 $ npm i
 $ npm update
-$ gulp (run local server)
+$ gulp
 ```
-
-Install the dependencies and devDependencies and build project.
-
-```sh
-$ cd vice-city-menu
-$ npm i
-$ npm update
-$ gulp build
-```
+Open in browser http://localhost:3000
 
 Install the dependencies and devDependencies and make build for deploy on server.
 
 ```sh
+$ git clone https://github.com/Broomber/vice-city-menu.git
 $ cd vice-city-menu
 $ npm i
 $ npm update
