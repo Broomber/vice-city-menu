@@ -45,4 +45,4 @@ $ gulp deploy
  - Add sound.
 
 
-### All rights to logos and trade names belong to their owners.
+### All rights belong to their owners.
