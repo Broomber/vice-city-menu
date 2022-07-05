@@ -1,6 +1,6 @@
 {
-  "name": "Vice City Main Menu",
-  "version": "0.1.0",
+  "name": "vice-city-menu",
+  "version": "0.1.1",
   "description": "Imitation of the Grand Theft Auto - Vice City main menu",
   "main": "index.html",
   "scripts": {
@@ -12,7 +12,9 @@
   },
   "author": "Broomber",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "yarn": "^1.22.19"
+  },
   "devDependencies": {
     "browser-sync": "^2.18.12",
     "del": "^2.2.2",

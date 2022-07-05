@@ -64,7 +64,8 @@ html {
 }
 
 .menu__list {
-    display: block;
+    display: flex;
+    flex-direction: column;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -72,7 +73,6 @@ html {
 }
 
 .menu__item {
-    /*display: table;*/
     width: auto;
     margin-left: auto;
     margin-right: auto

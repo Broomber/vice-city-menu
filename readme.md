@@ -12,7 +12,6 @@ Inspired by [Tadas Karpavičius](//codepen.io/trajektorijus/pen/ipzfa).
 
 # Demo
 https://broomber.github.io/vice-city-menu/
-[!] There is some troubles with displaying frame width of active item in GitHub Pages.
 
 # Installation
 
